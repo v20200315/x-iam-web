@@ -2,7 +2,7 @@
 
 Web frontend for **x-iam**. It is a [Vite](https://vite.dev/) app written in vanilla JavaScript, with [Tabler](https://tabler.io/) available as the UI toolkit.
 
-The current screen is the Vite starter page (`src/main.js`). Application screens still need to be built on top of that setup.
+The public home page is `index.html`. Page behavior lives in `src/js/main.js`.
 
 ## Stack
 
@@ -35,10 +35,8 @@ The dev server prints a local URL (usually `http://localhost:5173`). Saving a fi
 ## Project layout
 
 ```
-index.html          App entry HTML
-public/             Static files served as-is
-src/main.js         Page setup
-src/counter.js      Sample click counter
-src/style.css       Starter styles
-src/assets/         Images imported from JavaScript
+index.html          Public home page
+public/favicon.svg  Site icon
+src/js/main.js      Page scripts
+src/css/app.css     Application styles
 ```

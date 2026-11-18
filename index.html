@@ -1,13 +1,338 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>x-iam-web</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>x-iam | Identity and Access Management</title>
+
+  <meta name="description"
+    content="x-iam is a unified identity and access management platform for modern businesses." />
+
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <header class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+      <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+          <span class="avatar avatar-md bg-primary text-white fw-bold" aria-hidden="true">
+            X
+          </span>
+          <span class="fw-bold fs-2">x-iam</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <nav class="navbar-nav mx-auto">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#about">About</a>
+          </nav>
+
+          <div class="navbar-nav ms-auto">
+            <a href="/login.html" class="btn btn-primary px-4">
+              Sign in
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ms-1"
+                aria-hidden="true">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-4" />
+                <path d="M10 17l5 -5l-5 -5" />
+                <path d="M15 12h-12" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="py-6 py-md-8 bg-white">
+        <div class="container-xl">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <span class="badge bg-blue-lt text-blue">
+                  Identity & Access Management
+                </span>
+              </div>
+
+              <h1 class="display-3 fw-bold mb-4">
+                One Identity.
+                <span class="text-primary">Multiple Applications.</span>
+              </h1>
+
+              <p class="fs-2 text-secondary mb-4">
+                A unified identity and access management platform that
+                simplifies how people access business applications.
+              </p>
+
+              <div class="d-flex flex-wrap gap-3">
+                <a href="/login.html" class="btn btn-primary btn-lg px-4">
+                  Get started
+                </a>
+
+                <a href="#features" class="btn btn-outline-secondary btn-lg px-4">
+                  Explore features
+                </a>
+              </div>
+
+              <div class="mt-5 d-flex align-items-center gap-3">
+                <span class="avatar bg-green-lt text-green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M12 22s8 -4 8 -11V5l-8 -3l-8 3v6c0 7 8 11 8 11z" />
+                    <path d="M9 12l2 2l4 -4" />
+                  </svg>
+                </span>
+
+                <div>
+                  <div class="fw-semibold">Secure by design</div>
+                  <div class="text-secondary small">
+                    Centralized authentication and access control
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero illustration -->
+            <div class="col-lg-6">
+              <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body p-4 p-md-5">
+                  <div class="text-center mb-4">
+                    <span class="avatar avatar-xl bg-primary-lt text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        <circle cx="12" cy="16" r="1" />
+                      </svg>
+                    </span>
+
+                    <h2 class="h2 mt-3 mb-1">Unified Identity</h2>
+                    <p class="text-secondary">
+                      One identity, connected services
+                    </p>
+                  </div>
+
+                  <div class="card mb-3">
+                    <div class="card-body d-flex align-items-center gap-3">
+                      <span class="avatar bg-blue-lt text-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M16 21v-2a4 4 0 0 0 -4 -4H8a4 4 0 0 0 -4 4v2" />
+                          <circle cx="10" cy="7" r="4" />
+                          <path d="M20 8v6m3 -3h-6" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-semibold">User Identity</div>
+                        <div class="text-secondary small">
+                          Centralized user accounts
+                        </div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-green-lt text-green">Active</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card mb-3">
+                    <div class="card-body d-flex align-items-center gap-3">
+                      <span class="avatar bg-purple-lt text-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <rect x="3" y="3" width="7" height="7" rx="1" />
+                          <rect x="14" y="3" width="7" height="7" rx="1" />
+                          <rect x="14" y="14" width="7" height="7" rx="1" />
+                          <rect x="3" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-semibold">Business Applications</div>
+                        <div class="text-secondary small">
+                          Connected application ecosystem
+                        </div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-green-lt text-green">Connected</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-body d-flex align-items-center gap-3">
+                      <span class="avatar bg-orange-lt text-orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M12 22s8 -4 8 -11V5l-8 -3l-8 3v6c0 7 8 11 8 11z" />
+                          <path d="M9 12l2 2l4 -4" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-semibold">Access Control</div>
+                        <div class="text-secondary small">
+                          Consistent access management
+                        </div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-green-lt text-green">Protected</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="py-6 py-md-8 bg-light">
+        <div class="container-xl">
+          <div class="text-center mb-5">
+            <span class="badge bg-blue-lt text-blue mb-3">
+              Platform capabilities
+            </span>
+
+            <h2 class="display-5 fw-bold">
+              Everything starts with identity
+            </h2>
+
+            <p class="text-secondary fs-2 mx-auto" style="max-width: 650px">
+              A common foundation for managing identities, applications,
+              and access across your business.
+            </p>
+          </div>
+
+          <div class="row row-cards">
+            <div class="col-md-4">
+              <div class="card card-link h-100">
+                <div class="card-body p-4">
+                  <span class="avatar avatar-lg bg-blue-lt text-blue mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M16 21v-2a4 4 0 0 0 -4 -4H8a4 4 0 0 0 -4 4v2" />
+                      <circle cx="10" cy="7" r="4" />
+                    </svg>
+                  </span>
+
+                  <h3 class="h2">Identity Management</h3>
+
+                  <p class="text-secondary mb-0">
+                    Manage user identities and account information through
+                    a centralized platform.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card card-link h-100">
+                <div class="card-body p-4">
+                  <span class="avatar avatar-lg bg-purple-lt text-purple mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                  </span>
+
+                  <h3 class="h2">Application Management</h3>
+
+                  <p class="text-secondary mb-0">
+                    Organize business applications and establish a unified
+                    access experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card card-link h-100">
+                <div class="card-body p-4">
+                  <span class="avatar avatar-lg bg-orange-lt text-orange mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M12 22s8 -4 8 -11V5l-8 -3l-8 3v6c0 7 8 11 8 11z" />
+                      <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                  </span>
+
+                  <h3 class="h2">Access Management</h3>
+
+                  <p class="text-secondary mb-0">
+                    Apply consistent authentication and authorization
+                    policies across applications.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-6 py-md-8 bg-white">
+        <div class="container-xl">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+              <h2 class="display-5 fw-bold mb-3">
+                One platform. A connected ecosystem.
+              </h2>
+
+              <p class="fs-2 text-secondary mb-4">
+                x-iam provides a foundation for unified identity and
+                access management, helping businesses build secure,
+                connected digital experiences.
+              </p>
+
+              <a href="/login.html" class="btn btn-primary btn-lg px-5">
+                Access your account
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-top bg-white py-4">
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <div class="fw-bold">x-iam</div>
+            <div class="text-secondary small">
+              Identity and Access Management Platform
+            </div>
+          </div>
+
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <span class="text-secondary small">
+              © 2026 x-iam. All rights reserved.
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
 </html>
