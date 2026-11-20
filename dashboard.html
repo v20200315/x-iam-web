@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | x-iam</title>
+
+    <meta name="description" content="x-iam identity and access management dashboard." />
+
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page">
+        <!-- Sidebar -->
+        <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+          <div class="container-fluid">
+            <!-- Brand -->
+            <h1 class="navbar-brand navbar-brand-autodark">
+              <a href="/dashboard.html" class="d-flex align-items-center gap-2">
+                <span class="avatar avatar-md bg-primary text-white fw-bold"> X </span>
+                <span class="fw-bold fs-2">x-iam</span>
+              </a>
+            </h1>
+
+            <!-- Mobile toggle -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#sidebar-menu"
+              aria-controls="sidebar-menu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="sidebar-menu">
+              <ul class="navbar-nav pt-lg-3">
+                <!-- Overview -->
+                <li class="nav-item active">
+                  <a class="nav-link" href="/dashboard.html">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="3" y="3" width="7" height="9" rx="1" />
+                        <rect x="14" y="3" width="7" height="5" rx="1" />
+                        <rect x="14" y="12" width="7" height="9" rx="1" />
+                        <rect x="3" y="16" width="7" height="5" rx="1" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Dashboard</span>
+                  </a>
+                </li>
+
+                <!-- Identity -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#users">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="10" cy="7" r="4" />
+                        <path d="M20 8v6m3-3h-6" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Users</span>
+                  </a>
+                </li>
+
+                <!-- Organizations -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#organizations">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M3 21h18" />
+                        <path d="M5 21V7l8-4v18" />
+                        <path d="M19 21V11l-6-4" />
+                        <path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Organizations</span>
+                  </a>
+                </li>
+
+                <!-- Applications -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#applications">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="3" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="3" width="7" height="7" rx="1" />
+                        <rect x="14" y="14" width="7" height="7" rx="1" />
+                        <rect x="3" y="14" width="7" height="7" rx="1" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Applications</span>
+                  </a>
+                </li>
+
+                <!-- Access Management -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#roles">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" />
+                        <path d="M9 12l2 2 4-4" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Roles & Permissions</span>
+                  </a>
+                </li>
+
+                <!-- Divider -->
+                <li class="nav-item mt-3">
+                  <div class="hr-text">Administration</div>
+                </li>
+
+                <!-- Audit Logs -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#audit-logs">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Audit Logs</span>
+                  </a>
+                </li>
+
+                <!-- Settings -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#settings">
+                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                          d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 2.9-.2-.1a1.7 1.7 0 0 0-1.9.2l-.1.1h-3.4l-.1-.2a1.7 1.7 0 0 0-1.6-1l-.2.1-2.9-1.7.1-.2a1.7 1.7 0 0 0-.2-1.9l-.1-.1v-3.4l.2-.1a1.7 1.7 0 0 0 1-1.6l-.1-.2 1.7-2.9.2.1a1.7 1.7 0 0 0 1.9-.2l.1-.1h3.4l.1.2a1.7 1.7 0 0 0 1.6 1l.2-.1 2.9 1.7-.1.2a1.7 1.7 0 0 0 .2 1.9l.1.1z"
+                        />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">Settings</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main page -->
+        <div class="page-wrapper">
+          <!-- Top navigation -->
+          <header class="navbar navbar-expand-md d-print-none">
+            <div class="container-xl">
+              <div class="navbar-nav flex-row order-md-last">
+                <!-- Notifications -->
+                <div class="nav-item dropdown me-3">
+                  <a
+                    href="#"
+                    class="nav-link px-0"
+                    data-bs-toggle="dropdown"
+                    aria-label="Show notifications"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+                      <path d="M10 21h4" />
+                    </svg>
+                    <span class="badge bg-red"></span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <div class="dropdown-header">Notifications</div>
+                    <div class="dropdown-item text-secondary">You are all caught up.</div>
+                  </div>
+                </div>
+
+                <!-- User menu -->
+                <div class="nav-item dropdown">
+                  <a
+                    href="#"
+                    class="nav-link d-flex lh-1 text-reset p-0"
+                    data-bs-toggle="dropdown"
+                    aria-label="Open user menu"
+                  >
+                    <span class="avatar avatar-sm bg-primary text-white">JD</span>
+                    <div class="d-none d-xl-block ps-2">
+                      <div id="header-user-name">John Doe</div>
+                      <div class="mt-1 small text-secondary">Administrator</div>
+                    </div>
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <a href="#profile" class="dropdown-item">My Profile</a>
+                    <a href="#settings" class="dropdown-item">Account Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/" class="dropdown-item text-danger">Sign out</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Breadcrumb -->
+              <div class="navbar-nav">
+                <div class="nav-item">
+                  <span class="text-secondary">Dashboard</span>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <!-- Page body -->
+          <div class="page-body">
+            <div class="container-xl">
+              <!-- Page title -->
+              <div class="page-header d-print-none mb-4">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <div class="page-pretitle">Overview</div>
+                    <h2 class="page-title">Dashboard</h2>
+                    <div class="text-secondary mt-1">
+                      Welcome back, <span id="welcome-user-name">John Doe</span>. Here's what's
+                      happening with your identity platform.
+                    </div>
+                  </div>
+
+                  <div class="col-auto ms-auto d-print-none">
+                    <div class="btn-list">
+                      <button class="btn btn-primary" id="refresh-button">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M20 7v5h-5" />
+                          <path d="M4 17v-5h5" />
+                          <path d="M5.6 9a7 7 0 0 1 11.5-2L20 12" />
+                          <path d="M4 12l2.9 5a7 7 0 0 0 11.5-2" />
+                        </svg>
+                        Refresh
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Statistics -->
+              <div class="row row-deck row-cards mb-4">
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="subheader">Total Users</div>
+                        <div class="ms-auto">
+                          <span class="avatar avatar-sm bg-blue-lt text-blue">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                              <circle cx="10" cy="7" r="4" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="h1 mb-1">1,284</div>
+                      <div class="text-secondary">
+                        <span class="text-green fw-medium">+12%</span>
+                        compared to last month
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="subheader">Organizations</div>
+                        <div class="ms-auto">
+                          <span class="avatar avatar-sm bg-purple-lt text-purple">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <path d="M3 21h18" />
+                              <path d="M5 21V7l8-4v18" />
+                              <path d="M19 21V11l-6-4" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="h1 mb-1">36</div>
+                      <div class="text-secondary">
+                        <span class="text-green fw-medium">+4</span>
+                        new this month
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="subheader">Applications</div>
+                        <div class="ms-auto">
+                          <span class="avatar avatar-sm bg-orange-lt text-orange">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <rect x="3" y="3" width="7" height="7" rx="1" />
+                              <rect x="14" y="3" width="7" height="7" rx="1" />
+                              <rect x="14" y="14" width="7" height="7" rx="1" />
+                              <rect x="3" y="14" width="7" height="7" rx="1" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="h1 mb-1">12</div>
+                      <div class="text-secondary">
+                        <span class="text-green fw-medium">+2</span>
+                        new integrations
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <div class="subheader">Active Sessions</div>
+                        <div class="ms-auto">
+                          <span class="avatar avatar-sm bg-green-lt text-green">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                            >
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M12 6v6l4 2" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="h1 mb-1">87</div>
+                      <div class="text-secondary">
+                        <span class="text-green fw-medium">+8%</span>
+                        compared to yesterday
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main content -->
+              <div class="row row-deck row-cards">
+                <!-- Recent activity -->
+                <div class="col-lg-8">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Recent Activity</h3>
+                      <div class="card-actions">
+                        <a href="#audit-logs" class="btn btn-sm btn-outline-secondary">
+                          View all
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table class="table table-vcenter card-table">
+                        <thead>
+                          <tr>
+                            <th>Activity</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="fw-medium">User registered</div>
+                              <div class="text-secondary small">New account created</div>
+                            </td>
+                            <td>alice@example.com</td>
+                            <td class="text-secondary">Today, 09:30</td>
+                            <td><span class="badge bg-green-lt text-green">Success</span></td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="fw-medium">Organization created</div>
+                              <div class="text-secondary small">New organization registered</div>
+                            </td>
+                            <td>bob@example.com</td>
+                            <td class="text-secondary">Today, 08:45</td>
+                            <td><span class="badge bg-green-lt text-green">Success</span></td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="fw-medium">Role updated</div>
+                              <div class="text-secondary small">
+                                Administrator permissions changed
+                              </div>
+                            </td>
+                            <td>admin@example.com</td>
+                            <td class="text-secondary">Yesterday</td>
+                            <td><span class="badge bg-green-lt text-green">Success</span></td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="fw-medium">Application connected</div>
+                              <div class="text-secondary small">New application integrated</div>
+                            </td>
+                            <td>admin@example.com</td>
+                            <td class="text-secondary">Nov 17, 2026</td>
+                            <td><span class="badge bg-green-lt text-green">Success</span></td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="fw-medium">Login attempt</div>
+                              <div class="text-secondary small">Authentication attempt failed</div>
+                            </td>
+                            <td>unknown@example.com</td>
+                            <td class="text-secondary">Nov 17, 2026</td>
+                            <td><span class="badge bg-red-lt text-red">Failed</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Account overview -->
+                <div class="col-lg-4">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">My Account</h3>
+                    </div>
+
+                    <div class="card-body text-center">
+                      <span class="avatar avatar-xl bg-primary text-white mb-3"> JD </span>
+
+                      <h3 class="mb-1" id="profile-name">John Doe</h3>
+                      <div class="text-secondary mb-3" id="profile-email">john.doe@example.com</div>
+
+                      <div class="badge bg-green-lt text-green mb-4">Active Account</div>
+
+                      <div class="list-group list-group-flush text-start">
+                        <div class="list-group-item px-0">
+                          <div class="row align-items-center">
+                            <div class="col text-secondary">Account type</div>
+                            <div class="col-auto fw-medium">Administrator</div>
+                          </div>
+                        </div>
+
+                        <div class="list-group-item px-0">
+                          <div class="row align-items-center">
+                            <div class="col text-secondary">Email status</div>
+                            <div class="col-auto">
+                              <span class="badge bg-green-lt text-green">Verified</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="list-group-item px-0">
+                          <div class="row align-items-center">
+                            <div class="col text-secondary">Member since</div>
+                            <div class="col-auto fw-medium">Nov 2026</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-footer">
+                      <a href="#profile" class="btn btn-outline-primary w-100"> View Profile </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick access -->
+              <div class="row row-cards mt-2">
+                <div class="col-12">
+                  <h3 class="mb-3">Quick Access</h3>
+                </div>
+
+                <div class="col-md-4">
+                  <a href="#users" class="card card-link">
+                    <div class="card-body d-flex align-items-center">
+                      <span class="avatar avatar-lg bg-blue-lt text-blue me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="10" cy="7" r="4" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-medium">Manage Users</div>
+                        <div class="text-secondary small">View and manage user accounts</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-md-4">
+                  <a href="#organizations" class="card card-link">
+                    <div class="card-body d-flex align-items-center">
+                      <span class="avatar avatar-lg bg-purple-lt text-purple me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <path d="M3 21h18" />
+                          <path d="M5 21V7l8-4v18" />
+                          <path d="M19 21V11l-6-4" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-medium">Organizations</div>
+                        <div class="text-secondary small">Manage your organizations</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-md-4">
+                  <a href="#applications" class="card card-link">
+                    <div class="card-body d-flex align-items-center">
+                      <span class="avatar avatar-lg bg-orange-lt text-orange me-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <rect x="3" y="3" width="7" height="7" rx="1" />
+                          <rect x="14" y="3" width="7" height="7" rx="1" />
+                          <rect x="14" y="14" width="7" height="7" rx="1" />
+                          <rect x="3" y="14" width="7" height="7" rx="1" />
+                        </svg>
+                      </span>
+                      <div>
+                        <div class="fw-medium">Applications</div>
+                        <div class="text-secondary small">Manage connected applications</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="footer footer-transparent d-print-none">
+            <div class="container-xl">
+              <div class="row text-center align-items-center flex-row-reverse">
+                <div class="col-lg-auto ms-lg-auto">
+                  <ul class="list-inline list-inline-dots mb-0">
+                    <li class="list-inline-item">
+                      <a href="#about" class="link-secondary">About x-iam</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                  <ul class="list-inline list-inline-dots mb-0">
+                    <li class="list-inline-item">
+                      Copyright &copy; 2026 x-iam. All rights reserved.
+                    </li>
+                    <li class="list-inline-item">Identity and Access Management Platform</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+
+    <script>
+      // Temporary mock data for frontend development.
+      // Replace this with API data when backend integration is ready.
+
+      const mockUser = {
+        name: 'John Doe',
+        email: 'john.doe@example.com'
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('header-user-name').textContent = mockUser.name
+        document.getElementById('welcome-user-name').textContent = mockUser.name
+        document.getElementById('profile-name').textContent = mockUser.name
+        document.getElementById('profile-email').textContent = mockUser.email
+
+        // Demo refresh button.
+        document.getElementById('refresh-button').addEventListener('click', () => {
+          window.location.reload()
+        })
+      })
+    </script>
+  </body>
+</html>
