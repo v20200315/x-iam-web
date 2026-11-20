@@ -15,7 +15,8 @@
     "vite": "^8.3.6"
   },
   "dependencies": {
-    "@tabler/core": "^1.7.5"
+    "@tabler/core": "^1.7.5",
+    "keycloak-js": "^26.2.5"
   },
   "allowScripts": {
     "fsevents@2.3.3": true
